@@ -11,10 +11,12 @@ pguser = "postgres"
 pgpassword = "123123123"
 pgport = "5432"
 
-conn_string = "postgres://"+pguser+":"+urllib.parse.quote(pgpassword)+"@"+pghost+":"+pgport+"/"+pgdatabase
+conn_string = "postgres://"+pguser+":" + \
+    urllib.parse.quote(pgpassword)+"@"+pghost+":"+pgport+"/"+pgdatabase
 conn_postgres = psycopg2.connect(conn_string)
 
-conn = SimpleConnectionPool(0, 25,conn_string)
+conn = SimpleConnectionPool(0, 25, conn_string)
+
 
 def Querying(query):
     conn_postgres = conn.getconn()
