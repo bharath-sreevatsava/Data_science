@@ -1,13 +1,10 @@
 import pandas as pd
 import numpy as np
-import psycopg2
 import urllib
-import scipy
-import psutil
 import time
 from datetime import timedelta, datetime, date
 
-from querying import Querying
+from .querying import Querying
 
 
 def covid_analysis_module():
